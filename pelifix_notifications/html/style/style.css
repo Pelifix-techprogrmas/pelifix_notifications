@@ -1,0 +1,105 @@
+/* Import Roboto font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap");
+
+/* Set default styles for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "Lato";
+  overflow: hidden;
+}
+
+/* Style the root element and its children */
+#root {
+  position: absolute;
+  bottom: 210px;
+  left: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  border-radius: 17px;
+}
+
+#root .main .notification {
+  display: flex;
+  color: white;
+  align-items: center;
+  width: 279px;
+  height: 70px;
+  margin: 3px;
+  background: #161616;
+}
+
+#root .main .notification .message {
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+  padding: 1rem;
+}
+
+#root .main .notification .type {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  font-size: 28px;
+  z-index: 1;
+  padding: 1rem;
+}
+
+/* Define animations for the notification */
+.unfold {
+  animation: unfold 10s ease;
+}
+
+.fold {
+  animation: fold 2s ease;
+}
+
+/* Add some margin to the small element */
+small {
+    margin-bottom: 5px;
+}
+
+/* Define loading animation for keyframes */
+@keyframes loading {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Define fold animation for keyframes */
+@keyframes fold {
+  0% {
+    opacity: 0.8;
+    transform: scaleY(1);
+  }
+  6%,
+  20%,
+  80% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+/* Define unfold animation for keyframes */
+@keyframes unfold {
+  0% {
+    opacity: 0;
+    transform: translateY(-75%);
+  }
+  6%,
+  20%,
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
